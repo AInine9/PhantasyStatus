@@ -1,0 +1,9 @@
+
+.gitattributes
+*.xml
+out/artifacts/PhantasyStatus_jar/PhantasyStatus.jar
+PhantasyStatus.iml
+src/main/java/META-INF/MANIFEST.MF
+target/classes/hugu1026/com/github/phantasystatus/PhantasyStatus.class
+target/classes/plugin.yml
+*.class

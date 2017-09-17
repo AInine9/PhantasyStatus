@@ -1,3 +1,6 @@
 name: PhantasyStatus
 version: ${project.version}
 main: hugu1026.com.github.phantasystatus.PhantasyStatus
+commands:
+  st:
+    description: "Open Status Setting Gui."
