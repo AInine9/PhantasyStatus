@@ -1,6 +1,6 @@
 package hugu1026.com.github.phantasystatus.listener;
 
-import hugu1026.com.github.phantasystatus.utill.PlayerDataUtill;
+import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,6 +12,6 @@ public class PlayerJoin implements Listener{
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        PlayerDataUtill.createPlayerDataYml(player);
+        PlayerDataUtil.createPlayerDataYml(player);
     }
 }

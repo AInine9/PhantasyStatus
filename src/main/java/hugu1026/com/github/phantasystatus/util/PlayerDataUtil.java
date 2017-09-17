@@ -1,4 +1,4 @@
-package hugu1026.com.github.phantasystatus.utill;
+package hugu1026.com.github.phantasystatus.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import java.io.File;
 import java.io.IOException;
 
-public class PlayerDataUtill {
+public class PlayerDataUtil {
 
     public static void createPlayerDataYml(Player player) {
         String playerUUID = String.valueOf(player.getUniqueId());
