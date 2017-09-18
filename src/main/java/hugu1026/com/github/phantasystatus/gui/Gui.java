@@ -10,9 +10,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class Gui {
+public class Gui implements InventoryHolder{
 
     private Inventory inventory;
+
+    @Override
+    public Inventory getInventory() {
+        return this.inventory;
+    }
 
     public void setInventory(ItemStack itemStack, int slot) {
         if(itemStack != null) {

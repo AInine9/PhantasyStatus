@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
@@ -21,6 +22,7 @@ public class StatusGui extends Gui{
     private ItemStack DEFEND;
     private ItemStack MAGIC;
     private ItemStack ALL;
+    private ItemStack GLASS;
 
     private List<String> health_lore = new ArrayList<>();
     private List<String> attack_lore = new ArrayList<>();
@@ -48,22 +50,50 @@ public class StatusGui extends Gui{
         magic_lore.add(1, ChatColor.YELLOW + point_magic);
         all_lore.add(0, ChatColor.YELLOW + point_all);
 
-        this.HEALTH = super.createItemStack(Material.POTION, ChatColor.LIGHT_PURPLE + "体力", health_lore, 1);
+        this.HEALTH = super.createItemStack(Material.SHIELD, ChatColor.LIGHT_PURPLE + "体力", health_lore, 1);
         this.ATTACK = super.createItemStack(Material.IRON_SWORD, ChatColor.LIGHT_PURPLE + "攻撃力", attack_lore, 1);
         this.DEFEND = super.createItemStack(Material.IRON_CHESTPLATE, ChatColor.LIGHT_PURPLE + "防御力", defend_lore, 1);
         this.MAGIC = super.createItemStack(Material.ENCHANTED_BOOK, ChatColor.LIGHT_PURPLE + "魔力", magic_lore, 1);
         this.ALL = super.createItemStack(Material.PAPER, ChatColor.LIGHT_PURPLE + "残りのポイント" , all_lore, 1);
-
-        super.createInventory(null, 9, "ステータス振り分け");
+        this.GLASS = super.createItemStack(Material.STAINED_GLASS_PANE, " ", null, 1);
+        super.createInventory(this, 9, "ステータス振り分け");
     }
 
     @Override
     public void openInventory(Player player) {
         super.setInventory(this.HEALTH, 0);
+        super.setInventory(this.GLASS, 1);
         super.setInventory(this.ATTACK, 2);
+        super.setInventory(this.GLASS,3);
         super.setInventory(this.DEFEND, 4);
+        super.setInventory(this.GLASS,5);
         super.setInventory(this.MAGIC, 6);
+        super.setInventory(this.GLASS, 7);
         super.setInventory(this.ALL, 8);
         super.openInventory(player);
+    }
+
+    public ItemStack getALL() {
+        return this.ALL;
+    }
+
+    public ItemStack getHEALTH() {
+        return this.HEALTH;
+    }
+
+    public ItemStack getATTACK() {
+        return this.ATTACK;
+    }
+
+    public ItemStack getDEFEND() {
+        return this.DEFEND;
+    }
+
+    public ItemStack getMAGIC() {
+        return this.MAGIC;
+    }
+
+    public ItemStack getGLASS() {
+        return this.GLASS;
     }
 }

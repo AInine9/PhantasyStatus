@@ -26,6 +26,9 @@ public class PlayerDataUtil {
                 playerData.set("status.level", 1);
                 playerData.set("status.exp", 0);
                 playerData.set("status.HP", 20);
+                playerData.set("status.attack", 10);
+                playerData.set("status.defend", 10);
+                playerData.set("status.magic", 10);
                 playerData.set("point.all", 5);
                 playerData.set("point.health", 0);
                 playerData.set("point.attack", 0);

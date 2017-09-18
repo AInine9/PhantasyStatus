@@ -1,6 +1,7 @@
 package hugu1026.com.github.phantasystatus;
 
 import hugu1026.com.github.phantasystatus.command.StatusCommand;
+import hugu1026.com.github.phantasystatus.listener.InventoryClick;
 import hugu1026.com.github.phantasystatus.listener.PlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -24,5 +25,6 @@ public final class PhantasyStatus extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
 
         pm.registerEvents(new PlayerJoin(), this);
+        pm.registerEvents(new InventoryClick(), this);
     }
 }
