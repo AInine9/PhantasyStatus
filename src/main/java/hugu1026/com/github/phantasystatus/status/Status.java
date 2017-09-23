@@ -2,7 +2,6 @@ package hugu1026.com.github.phantasystatus.status;
 
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
@@ -13,8 +12,7 @@ public class Status{
     private FileConfiguration playerData;
 
     public void setPlayerData(Player player) {
-        this.playerFile = PlayerDataUtil.getPlayerFile(player);
-        this.playerData = YamlConfiguration.loadConfiguration(playerFile);
+        this.playerData = PlayerDataUtil.getPlayerData(player);
     }
 
     public void setPlayerFile(Player player) {
