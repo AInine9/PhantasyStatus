@@ -18,14 +18,15 @@ public class Health extends Status{
         if(!(playerData.getInt("point.all") > 0)) return;
         playerData.set("point.all", playerData.getInt("point.all") - 1);
         playerData.set("point.health", playerData.getInt("point.health") + 1);
+        playerData.set("status.HP", playerData.getInt("status.HP") + 1);
 
         player.sendMessage(ChatColor.GOLD + "ステータスポイントを体力に振り分けた");
 
         try {
             playerData.save(playerFile);
-        } catch (IOException expection) {
+        } catch (IOException exception) {
             Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
-            expection.printStackTrace();
+            exception.printStackTrace();
         }
         StatusGui statusGui = new StatusGui(player);
         statusGui.openInventory(player);
