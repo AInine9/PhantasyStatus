@@ -1,5 +1,6 @@
 package hugu1026.com.github.phantasystatus;
 
+import hugu1026.com.github.phantasystatus.command.MyStatusCommand;
 import hugu1026.com.github.phantasystatus.command.StatusCommand;
 import hugu1026.com.github.phantasystatus.listener.InventoryClick;
 import hugu1026.com.github.phantasystatus.listener.PlayerDamage;
@@ -15,6 +16,7 @@ public final class PhantasyStatus extends JavaPlugin {
         super.onEnable();
         this.registerEvents();
         getCommand("st").setExecutor(new StatusCommand(this));
+        getCommand("myst").setExecutor(new MyStatusCommand(this));
     }
 
     @Override
