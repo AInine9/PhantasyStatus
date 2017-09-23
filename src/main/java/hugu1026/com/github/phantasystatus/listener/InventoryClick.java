@@ -20,9 +20,8 @@ public class InventoryClick implements Listener{
         StatusGui gui = (StatusGui) event.getInventory().getHolder();
         ItemStack clickedItem = event.getCurrentItem();
 
-        if(event.getWhoClicked() instanceof Player) {
-            this.player = (Player) event.getWhoClicked();
-        }
+        if(!(event.getWhoClicked() instanceof Player)) return;
+        this.player = (Player) event.getWhoClicked();
 
         if(clickedItem.equals(gui.getALL())) {
             event.setCancelled(true);

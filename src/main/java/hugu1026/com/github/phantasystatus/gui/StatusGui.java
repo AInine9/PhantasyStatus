@@ -6,8 +6,6 @@ import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
@@ -17,12 +15,7 @@ import java.util.List;
 
 public class StatusGui extends Gui{
 
-    private ItemStack HEALTH;
-    private ItemStack ATTACK;
-    private ItemStack DEFEND;
-    private ItemStack MAGIC;
-    private ItemStack ALL;
-    private ItemStack GLASS;
+    private ItemStack HEALTH, ATTACK, DEFEND, MAGIC, ALL, GLASS;
 
     private List<String> health_lore = new ArrayList<>();
     private List<String> attack_lore = new ArrayList<>();
