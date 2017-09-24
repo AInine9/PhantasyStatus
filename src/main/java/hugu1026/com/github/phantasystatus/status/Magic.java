@@ -1,6 +1,7 @@
 package hugu1026.com.github.phantasystatus.status;
 
 import hugu1026.com.github.phantasystatus.gui.StatusGui;
+import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -22,12 +23,7 @@ public class Magic extends Status{
 
         player.sendMessage(ChatColor.GOLD + "ステータスポイントを魔力に振り分けた");
 
-        try {
-            playerData.save(playerFile);
-        } catch (IOException exception) {
-            Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
-            exception.printStackTrace();
-        }
+        PlayerDataUtil.savePlayerData(playerFile, playerData, player);
         StatusGui statusGui = new StatusGui(player);
         statusGui.openInventory(player);
     }

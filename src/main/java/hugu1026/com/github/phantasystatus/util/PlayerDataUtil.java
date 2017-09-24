@@ -56,4 +56,13 @@ public class PlayerDataUtil {
         FileConfiguration playerData = YamlConfiguration.loadConfiguration(file);
         return playerData;
     }
+
+    public static void savePlayerData(File playerFile, FileConfiguration playerData, Player player) {
+        try {
+            playerData.save(playerFile);
+        } catch (IOException exception) {
+            Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
+            exception.printStackTrace();
+        }
+    }
 }

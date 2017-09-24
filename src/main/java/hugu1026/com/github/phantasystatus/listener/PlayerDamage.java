@@ -29,12 +29,7 @@ public class PlayerDamage implements Listener{
         event.setCancelled(true);
 
         playerData.set("status.HP", playerHP - damage);
-        try {
-            playerData.save(playerFile);
-        } catch (IOException exception) {
-            Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
-            exception.printStackTrace();
-        }
+        PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
         playerHP = playerData.getInt("status.HP");
         double proportion = playerHP / playerMaxHP;
@@ -72,12 +67,7 @@ public class PlayerDamage implements Listener{
             player.damage(20);
 
             playerData.set("status.HP", playerData.getInt("point.health") + 20);
-            try {
-                playerData.save(playerFile);
-            } catch (IOException exception) {
-                Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
-                exception.printStackTrace();
-            }
+            PlayerDataUtil.savePlayerData(playerFile, playerData, player);
         }
     }
 }
