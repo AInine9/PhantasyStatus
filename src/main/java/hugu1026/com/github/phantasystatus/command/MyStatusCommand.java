@@ -25,7 +25,8 @@ public class MyStatusCommand implements CommandExecutor{
                 FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
 
                 int level = playerData.getInt("status.level");
-                int exp = playerData.getInt("status.exp");
+                int totalExp = playerData.getInt("status.totalExp");
+                int reqExp = playerData.getInt("status.reqExp");
                 int HP = playerData.getInt("status.HP");
                 int maxHP = playerData.getInt("point.health") * 2 + 20;
                 int attack = playerData.getInt("status.attack");
@@ -34,7 +35,8 @@ public class MyStatusCommand implements CommandExecutor{
 
                 player.sendMessage(ChatColor.GOLD + "----------ステータス----------");
                 player.sendMessage(ChatColor.GOLD + "レベル:" + level);
-                player.sendMessage(ChatColor.GOLD + "経験値:" + exp);
+                player.sendMessage(ChatColor.GOLD + "累計経験値:" + totalExp);
+                player.sendMessage(ChatColor.GOLD + "次のレベルまで:" + reqExp);
                 player.sendMessage(ChatColor.GOLD + "体力:" + HP + "/" + maxHP);
                 player.sendMessage(ChatColor.GOLD + "攻撃力:" + attack);
                 player.sendMessage(ChatColor.GOLD + "防御力:" + defend);
