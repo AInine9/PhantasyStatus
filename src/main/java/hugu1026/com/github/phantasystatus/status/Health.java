@@ -17,7 +17,7 @@ public class Health extends Status{
 
         if(!(playerData.getInt("point.all") > 0)) return;
         playerData.set("point.all", playerData.getInt("point.all") - 1);
-        playerData.set("point.health", playerData.getInt("point.health") + 2);
+        playerData.set("point.health", playerData.getInt("point.health") + 1);
         playerData.set("status.HP", playerData.getInt("status.HP") + 2);
 
         player.sendMessage(ChatColor.GOLD + "ステータスポイントを体力に振り分けた");

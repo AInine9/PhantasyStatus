@@ -24,7 +24,7 @@ public class PlayerDamage implements Listener{
         FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
         double damage = event.getFinalDamage();
         double playerHP = playerData.getInt("status.HP");
-        double playerMaxHP = playerData.getInt("point.health") + 20;
+        double playerMaxHP = playerData.getInt("point.health") * 2 + 20;
 
         event.setCancelled(true);
 

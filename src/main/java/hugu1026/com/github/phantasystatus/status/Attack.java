@@ -17,7 +17,7 @@ public class Attack extends Status {
 
         if (!(playerData.getInt("point.all") > 0)) return;
         playerData.set("point.all", playerData.getInt("point.all") - 1);
-        playerData.set("point.attack", playerData.getInt("point.attack") + 2);
+        playerData.set("point.attack", playerData.getInt("point.attack") + 1);
         playerData.set("status.attack", playerData.getInt("status.attack") + 2);
 
         player.sendMessage(ChatColor.GOLD + "ステータスポイントを攻撃力に振り分けた");
