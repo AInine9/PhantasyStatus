@@ -30,5 +30,6 @@ public final class PhantasyStatus extends JavaPlugin {
         pm.registerEvents(new PlayerDamage(), this);
         pm.registerEvents(new EntityDeath(), this);
         pm.registerEvents(new GetExp(), this);
+        pm.registerEvents(new LevelUp(), this);
     }
 }
