@@ -40,7 +40,8 @@ public class StatusGui extends Gui{
         defend_lore.add(0, ChatColor.LIGHT_PURPLE + "防御力に関わる");
         defend_lore.add(1, ChatColor.YELLOW + point_defend);
         magic_lore.add(0, ChatColor.LIGHT_PURPLE + "使用できる魔法が増える");
-        magic_lore.add(1, ChatColor.YELLOW + point_magic);
+        magic_lore.add(1, ChatColor.LIGHT_PURPLE + "2ポイントごとにスピリットを入手できる");
+        magic_lore.add(2, ChatColor.YELLOW + point_magic);
         all_lore.add(0, ChatColor.YELLOW + point_all);
 
         this.HEALTH = super.createItemStack(Material.SHIELD, ChatColor.LIGHT_PURPLE + "体力", health_lore, 1);
