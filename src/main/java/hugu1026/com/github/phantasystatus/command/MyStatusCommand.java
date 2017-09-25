@@ -34,13 +34,13 @@ public class MyStatusCommand implements CommandExecutor{
                 int magic = playerData.getInt("status.magic");
 
                 player.sendMessage(ChatColor.GOLD + "----------ステータス----------");
-                player.sendMessage(ChatColor.GOLD + "レベル:" + level);
-                player.sendMessage(ChatColor.GOLD + "累計経験値:" + totalExp);
-                player.sendMessage(ChatColor.GOLD + "次のレベルまで:" + reqExp);
-                player.sendMessage(ChatColor.GOLD + "体力:" + HP + "/" + maxHP);
-                player.sendMessage(ChatColor.GOLD + "攻撃力:" + attack);
-                player.sendMessage(ChatColor.GOLD + "防御力:" + defend);
-                player.sendMessage(ChatColor.GOLD + "魔力:" + magic);
+                player.sendMessage(ChatColor.GOLD + "レベル: " + level);
+                player.sendMessage(ChatColor.GOLD + "累計経験値: " + totalExp);
+                player.sendMessage(ChatColor.GOLD + "次のレベルまで: " + reqExp);
+                player.sendMessage(ChatColor.GOLD + "体力: " + HP + "/" + maxHP);
+                player.sendMessage(ChatColor.GOLD + "攻撃力: " + attack);
+                player.sendMessage(ChatColor.GOLD + "防御力: " + defend);
+                player.sendMessage(ChatColor.GOLD + "魔力: " + magic);
             }
         }
         return false;
