@@ -12,8 +12,8 @@ public class PlayerDataUtil {
 
     public static void createPlayerDataYml(Player player) {
         String playerUUID = String.valueOf(player.getUniqueId());
-        File userdata = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
-        File file = new File(userdata, File.separator + playerUUID + ".yml");
+        File userData = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
+        File file = new File(userData, File.separator + playerUUID + ".yml");
         FileConfiguration playerData = YamlConfiguration.loadConfiguration(file);
 
         if (!file.exists()) {
@@ -45,15 +45,15 @@ public class PlayerDataUtil {
 
     public static File getPlayerFile(Player player) {
         String playerUUID = String.valueOf(player.getUniqueId());
-        File userdata = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
-        File playerFile = new File(userdata, File.separator + playerUUID + ".yml");
+        File userData = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
+        File playerFile = new File(userData, File.separator + playerUUID + ".yml");
         return playerFile;
     }
 
     public static FileConfiguration getPlayerData(Player player) {
         String playerUUID = String.valueOf(player.getUniqueId());
-        File userdata = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
-        File file = new File(userdata, File.separator + playerUUID + ".yml");
+        File userData = new File(Bukkit.getServer().getPluginManager().getPlugin("PhantasyStatus").getDataFolder(), File.separator + "player_data");
+        File file = new File(userData, File.separator + playerUUID + ".yml");
         FileConfiguration playerData = YamlConfiguration.loadConfiguration(file);
         return playerData;
     }

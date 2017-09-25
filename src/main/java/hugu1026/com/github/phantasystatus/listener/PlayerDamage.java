@@ -1,7 +1,6 @@
 package hugu1026.com.github.phantasystatus.listener;
 
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,7 +9,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import java.io.File;
-import java.io.IOException;
 
 public class PlayerDamage implements Listener{
 
