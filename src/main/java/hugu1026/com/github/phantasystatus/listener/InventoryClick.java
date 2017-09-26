@@ -17,48 +17,35 @@ public class InventoryClick implements Listener{
         if(event.getInventory() == null
                 || !(event.getClickedInventory().getHolder() instanceof StatusGui)) return;
 
-        StatusGui gui = (StatusGui) event.getInventory().getHolder();
-        ItemStack clickedItem = event.getCurrentItem();
-
         if(!(event.getWhoClicked() instanceof Player)) return;
         this.player = (Player) event.getWhoClicked();
 
-        if(clickedItem.equals(gui.getALL())) {
-            event.setCancelled(true);
-            return;
-        }
+        event.setCancelled(true);
+
+        Status status = new Status(player);
+
+        if(!(status.canAddPoint())) return;
+
+        StatusGui gui = (StatusGui) event.getInventory().getHolder();
+        ItemStack clickedItem = event.getCurrentItem();
 
         if(clickedItem.equals(gui.getHEALTH())) {
-            event.setCancelled(true);
-            Health health = new Health();
-            health.onPushHealthIcon(player);
+            status.onPushStatusIcon(player, "Health");
             return;
         }
 
         if(clickedItem.equals(gui.getATTACK())) {
-            event.setCancelled(true);
-            Attack attack = new Attack();
-            attack.onPushAttackIcon(player);
+            status.onPushStatusIcon(player, "Attack");
             return;
         }
 
         if(clickedItem.equals(gui.getDEFEND())) {
-            event.setCancelled(true);
-            Defend defend = new Defend();
-            defend.onPushDefendIcon(player);
+            status.onPushStatusIcon(player, "Defend");
             return;
         }
 
         if(clickedItem.equals(gui.getMAGIC())) {
-            event.setCancelled(true);
-            Magic magic = new Magic();
-            magic.onPushMagicIcon(player);
-            return;
-        }
-
-        if(clickedItem.equals(gui.getGLASS())) {
-            event.setCancelled(true);
-            return;
+            status.onPushStatusIcon(player, "Magic");
         }
     }
 }
