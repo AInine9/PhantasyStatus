@@ -31,12 +31,15 @@ public class LevelUp implements Listener{
         switch (playerLevel + 1) {
             case 30:
                 playerData.set("panel", 2);
+                player.sendMessage(ChatColor.GREEN + "ステータスパネルが2枚目になった！");
                 break;
             case 60:
                 playerData.set("panel", 3);
+                player.sendMessage(ChatColor.GREEN + "ステータスパネルが3枚目になった！");
                 break;
             case 80:
                 playerData.set("panel", 4);
+                player.sendMessage(ChatColor.GREEN + "ステータスパネルが4枚目になった！");
                 break;
         }
 
