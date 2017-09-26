@@ -19,10 +19,12 @@ public class PlayerDataUtil {
         if (!file.exists()) {
             try {
                 playerData.createSection("name");
+                playerData.createSection("panel");
                 playerData.createSection("status");
                 playerData.createSection("point");
 
                 playerData.set("name", player.getName());
+                playerData.set("panel", 1);
                 playerData.set("status.level", 1);
                 playerData.set("status.totalExp", 0);
                 playerData.set("status.reqExp", 4);

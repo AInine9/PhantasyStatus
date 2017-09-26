@@ -28,6 +28,18 @@ public class LevelUp implements Listener{
         playerData.set("point.all", playerData.getInt("point.all") + 5);
         player.sendMessage(ChatColor.BLUE + "レベルが " + playerLevel +1 + " になった！ステータスポイントを入手した！");
 
+        switch (playerLevel + 1) {
+            case 30:
+                playerData.set("panel", 2);
+                break;
+            case 60:
+                playerData.set("panel", 3);
+                break;
+            case 80:
+                playerData.set("panel", 4);
+                break;
+        }
+
         if(!(playerLevel == event.getMaxLevel() - 1)) {
 
             if(playerData.getInt("status.reqExp") == 0) {

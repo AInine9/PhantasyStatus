@@ -19,6 +19,8 @@ public class MyStatusCommand implements CommandExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 
+        ChatColor chatColor = ChatColor.GOLD;
+
         if(cmd.getName().equalsIgnoreCase("myst")) {
             if(sender instanceof Player) {
                 Player player = (Player) sender;
@@ -32,15 +34,19 @@ public class MyStatusCommand implements CommandExecutor{
                 int attack = playerData.getInt("status.attack");
                 int defend = playerData.getInt("status.defend");
                 int magic = playerData.getInt("status.magic");
+                int point = playerData.getInt("point.all");
+                int panel = playerData.getInt("panel");
 
-                player.sendMessage(ChatColor.GOLD + "----------ステータス----------");
-                player.sendMessage(ChatColor.GOLD + "レベル: " + level);
-                player.sendMessage(ChatColor.GOLD + "累計経験値: " + totalExp);
-                player.sendMessage(ChatColor.GOLD + "次のレベルまで: " + reqExp);
-                player.sendMessage(ChatColor.GOLD + "体力: " + HP + "/" + maxHP);
-                player.sendMessage(ChatColor.GOLD + "攻撃力: " + attack);
-                player.sendMessage(ChatColor.GOLD + "防御力: " + defend);
-                player.sendMessage(ChatColor.GOLD + "魔力: " + magic);
+                player.sendMessage(chatColor + "----------ステータス----------");
+                player.sendMessage(chatColor + "レベル: " + level);
+                player.sendMessage(chatColor + "累計経験値: " + totalExp);
+                player.sendMessage(chatColor + "次のレベルまで: " + reqExp);
+                player.sendMessage(chatColor + "体力: " + HP + "/" + maxHP);
+                player.sendMessage(chatColor + "攻撃力: " + attack);
+                player.sendMessage(chatColor + "防御力: " + defend);
+                player.sendMessage(chatColor + "魔力: " + magic);
+                player.sendMessage(chatColor + "残りのステータスポイント: " + point);
+                player.sendMessage(chatColor + "ステータスパネル: " + panel);
             }
         }
         return false;
