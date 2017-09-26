@@ -2,6 +2,7 @@ package hugu1026.com.github.phantasystatus.listener;
 
 import hugu1026.com.github.phantasystatus.gui.StatusGui;
 import hugu1026.com.github.phantasystatus.status.*;
+import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,10 +20,11 @@ public class InventoryClick implements Listener{
 
         if(!(event.getWhoClicked() instanceof Player)) return;
         this.player = (Player) event.getWhoClicked();
+        int panel = PlayerDataUtil.getPlayerData(player).getInt("panel");
 
         event.setCancelled(true);
 
-        Status status = new Status(player);
+        Status status = new Status(player, panel);
 
         if(!(status.canAddPoint())) return;
 
