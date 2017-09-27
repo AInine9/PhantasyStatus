@@ -22,13 +22,13 @@ public class LevelUp implements Listener{
         File playerFile = PlayerDataUtil.getPlayerFile(player);
         FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
 
-        int playerLevel = playerData.getInt("status.level");
+        int playerLevel = playerData.getInt("status.level") + 1;
 
-        playerData.set("status.level", playerLevel + 1);
+        playerData.set("status.level", playerLevel);
         playerData.set("point.all", playerData.getInt("point.all") + 5);
-        player.sendMessage(ChatColor.BLUE + "レベルが " + playerLevel +1 + " になった！ステータスポイントを入手した！");
+        player.sendMessage(ChatColor.BLUE + "レベルが " + playerLevel + " になった！ステータスポイントを入手した！");
 
-        switch (playerLevel + 1) {
+        switch (playerLevel) {
             case 30:
                 playerData.set("panel", 2);
                 player.sendMessage(ChatColor.GREEN + "ステータスパネルが2枚目になった！");
@@ -43,14 +43,14 @@ public class LevelUp implements Listener{
                 break;
         }
 
-        if(!(playerLevel == event.getMaxLevel() - 1)) {
+        if(!(playerLevel - 1 == event.getMaxLevel() - 1)) {
 
             if(playerData.getInt("status.reqExp") == 0) {
-                playerData.set("status.reqExp", expTable[playerLevel + 1]);
+                playerData.set("status.reqExp", expTable[playerLevel]);
                 PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
             } else {
-                playerData.set("status.reqExp", expTable[playerLevel + 1] + playerData.getInt("status.reqExp"));
+                playerData.set("status.reqExp", expTable[playerLevel] + playerData.getInt("status.reqExp"));
                 PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
                 if(playerData.getInt("status.reqExp") <= 0) {
