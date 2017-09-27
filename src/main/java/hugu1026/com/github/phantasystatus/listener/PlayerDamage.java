@@ -22,14 +22,14 @@ public class PlayerDamage implements Listener{
         FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
         double damage = event.getFinalDamage();
         double playerHP = playerData.getInt("status.HP");
-        double playerMaxHP = playerData.getInt("point.health") * 2 + 20;
+        double playerMaxHP = playerData.getInt("status.addition.HP") + 20;
 
         event.setCancelled(true);
 
         playerData.set("status.HP", playerHP - damage);
         PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
-        playerHP = playerData.getInt("status.HP");
+        playerHP = playerHP - damage;
         double proportion = playerHP / playerMaxHP;
 
         if(1 >= proportion && proportion > 0.9) {
@@ -64,7 +64,7 @@ public class PlayerDamage implements Listener{
         } else if(proportion <= 0) {
             player.damage(20);
 
-            playerData.set("status.HP", playerData.getInt("point.health") + 20);
+            playerData.set("status.HP", playerData.getInt("status.addition.HP") + 20);
             PlayerDataUtil.savePlayerData(playerFile, playerData, player);
         }
     }

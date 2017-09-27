@@ -62,21 +62,25 @@ public class Status{
         switch (type) {
             case "Health":
                 playerData.set("point.health", playerData.getInt("point.health") + 1);
+                playerData.set("status.addition.HP", playerData.getInt("status.addition.HP") + this.addValue_HP);
                 playerData.set("status.HP", playerData.getInt("status.HP") + this.addValue_HP);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを体力に振り分けた");
                 break;
             case  "Attack":
                 playerData.set("point.attack", playerData.getInt("point.attack") + 1);
+                playerData.set("status.addition.attack", playerData.getInt("status.addition.attack") + this.addValue_Attack);
                 playerData.set("status.attack", playerData.getInt("status.attack") + this.addValue_Attack);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを攻撃力に振り分けた");
                 break;
             case "Defend":
                 playerData.set("point.defend", playerData.getInt("point.defend") + 1);
+                playerData.set("status.addition.defend", playerData.getInt("status.addition.defend") + this.addValue_Defend);
                 playerData.set("status.defend", playerData.getInt("status.defend") + this.addValue_Defend);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを防御力に振り分けた");
                 break;
             case  "Magic":
                 playerData.set("point.magic", playerData.getInt("point.magic") + 1);
+                playerData.set("status.addition.magic", playerData.getInt("status.addition.magic") + this.addValue_Magic);
                 playerData.set("status.magic", playerData.getInt("status.magic") + this.addValue_Magic);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを魔力に振り分けた");
 

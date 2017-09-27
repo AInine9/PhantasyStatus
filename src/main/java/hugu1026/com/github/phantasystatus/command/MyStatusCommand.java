@@ -30,7 +30,7 @@ public class MyStatusCommand implements CommandExecutor{
                 int totalExp = playerData.getInt("status.totalExp");
                 int reqExp = playerData.getInt("status.reqExp");
                 int HP = playerData.getInt("status.HP");
-                int maxHP = playerData.getInt("point.health") * 2 + 20;
+                int maxHP = playerData.getInt("status.addition.HP") + 20;
                 int attack = playerData.getInt("status.attack");
                 int defend = playerData.getInt("status.defend");
                 int magic = playerData.getInt("status.magic");
