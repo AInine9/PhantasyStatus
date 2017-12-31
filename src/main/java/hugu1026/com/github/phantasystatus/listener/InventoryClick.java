@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class InventoryClick implements Listener{
@@ -15,14 +16,16 @@ public class InventoryClick implements Listener{
 
     @EventHandler
     public void InventoryClick(InventoryClickEvent event) {
-        if(event.getInventory() == null
-                || !(event.getClickedInventory().getHolder() instanceof StatusGui)) return;
+        Inventory inventory = event.getInventory();
+        if (inventory == null) return;
+
+        if (!(inventory.getHolder() instanceof StatusGui)) return;
+
+        if (!(event.getWhoClicked() instanceof Player)) return;
 
         if(!(event.getWhoClicked() instanceof Player)) return;
         this.player = (Player) event.getWhoClicked();
         int panel = PlayerDataUtil.getPlayerData(player).getInt("panel");
-
-        event.setCancelled(true);
 
         Status status = new Status(player, panel);
 
@@ -31,23 +34,29 @@ public class InventoryClick implements Listener{
         StatusGui gui = (StatusGui) event.getInventory().getHolder();
         ItemStack clickedItem = event.getCurrentItem();
 
-        if(clickedItem.equals(gui.getHEALTH())) {
-            status.onPushStatusIcon(player, "Health");
-            return;
-        }
-
-        if(clickedItem.equals(gui.getATTACK())) {
-            status.onPushStatusIcon(player, "Attack");
-            return;
-        }
-
-        if(clickedItem.equals(gui.getDEFEND())) {
-            status.onPushStatusIcon(player, "Defend");
-            return;
-        }
-
-        if(clickedItem.equals(gui.getMAGIC())) {
-            status.onPushStatusIcon(player, "Magic");
+        if (clickedItem != null) {
+            if(clickedItem.equals(gui.getHEALTH())) {
+                status.onPushStatusIcon(player, "Health");
+                return;
+            }
+            if(clickedItem.equals(gui.getATTACK())) {
+                status.onPushStatusIcon(player, "Attack");
+                return;
+            }
+            if(clickedItem.equals(gui.getDEFEND())) {
+                status.onPushStatusIcon(player, "Defend");
+                return;
+            }
+            if(clickedItem.equals(gui.getMAGIC())) {
+                status.onPushStatusIcon(player, "Magic");
+            }
+            if(clickedItem.equals(gui.getGLASS())) {
+                event.setCancelled(true);
+            }
+            else {
+                return;
+            }
+            event.setCancelled(true);
         }
     }
 }
