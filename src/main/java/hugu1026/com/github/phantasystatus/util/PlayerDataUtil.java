@@ -32,10 +32,12 @@ public class PlayerDataUtil {
                 playerData.set("status.attack", 10);
                 playerData.set("status.defend", 10);
                 playerData.set("status.magic", 10);
+                playerData.set("status.mana", 50);
                 playerData.set("status.addition.HP", 0);
                 playerData.set("status.addition.attack", 0);
                 playerData.set("status.addition.defend", 0);
                 playerData.set("status.addition.magic", 0);
+                playerData.set("status.addition.mana", 0);
                 playerData.set("point.all", 5);
                 playerData.set("point.health", 0);
                 playerData.set("point.attack", 0);
@@ -71,5 +73,41 @@ public class PlayerDataUtil {
             Bukkit.getServer().getLogger().severe(player.getDisplayName() + "のデータを保存できませんでした");
             exception.printStackTrace();
         }
+    }
+
+    public static int getPlayerHP(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.HP");
+    }
+
+    public static int getPlayerLEVEL(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.level");
+    }
+
+    public static int getPlayerATTACK(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.attack");
+    }
+
+    public static int getPlayerDEFEND(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.defend");
+    }
+
+    public static int getPlayerMAGIC(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.magic");
+    }
+
+    public static int getPlayerMANA(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.mana");
     }
 }

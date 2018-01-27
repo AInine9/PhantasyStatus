@@ -20,6 +20,7 @@ public class Status{
     private int addValue_Defend;
     private int addValue_Attack;
     private int addValue_Magic;
+    private int addValue_Mana;
 
     public Status(Player player, int panel) {
         this.playerFile = PlayerDataUtil.getPlayerFile(player);
@@ -30,24 +31,28 @@ public class Status{
                 this.addValue_Defend = 2;
                 this.addValue_Attack = 2;
                 this.addValue_Magic = 1;
+                this.addValue_Mana = 2;
                 break;
             case 2:
                 this.addValue_HP = 3;
                 this.addValue_Defend = 3;
                 this.addValue_Attack = 3;
                 this.addValue_Magic = 2;
+                this.addValue_Mana = 3;
                 break;
             case 3:
                 this.addValue_HP = 4;
                 this.addValue_Defend = 4;
                 this.addValue_Attack = 4;
                 this.addValue_Magic = 3;
+                this.addValue_Mana = 4;
                 break;
             case 4:
                 this.addValue_HP = 5;
                 this.addValue_Defend = 5;
                 this.addValue_Attack = 5;
                 this.addValue_Magic = 4;
+                this.addValue_Mana = 5;
                 break;
         }
     }
@@ -82,6 +87,9 @@ public class Status{
                 playerData.set("point.magic", playerData.getInt("point.magic") + 1);
                 playerData.set("status.addition.magic", playerData.getInt("status.addition.magic") + this.addValue_Magic);
                 playerData.set("status.magic", playerData.getInt("status.magic") + this.addValue_Magic);
+
+                playerData.set("status.addition.mana", playerData.getInt("status.addition.mana") + this.addValue_Mana);
+                playerData.set("status.mana", playerData.getInt("status.mana") + this.addValue_Mana);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを魔力に振り分けた");
 
                 if(playerData.getInt("status.magic") % 2 == 0) {
