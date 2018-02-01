@@ -110,4 +110,10 @@ public class PlayerDataUtil {
 
         return playerData.getInt("status.mana");
     }
+
+    public static int getPlayerMAX_MANA(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.addition.mana") + 50;
+    }
 }
