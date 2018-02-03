@@ -34,7 +34,8 @@ public class MyStatusCommand implements CommandExecutor{
                 int attack = playerData.getInt("status.attack");
                 int defend = playerData.getInt("status.defend");
                 int magic = playerData.getInt("status.magic");
-                int mana = playerData.getInt("status.addition.mana") + 50;
+                int mana = playerData.getInt("status.mana");
+                int maxMana = playerData.getInt("status.addition.mana") + 50;
                 int point = playerData.getInt("point.all");
                 int panel = playerData.getInt("panel");
 
@@ -46,7 +47,7 @@ public class MyStatusCommand implements CommandExecutor{
                 player.sendMessage(chatColor + "攻撃力: " + attack);
                 player.sendMessage(chatColor + "防御力: " + defend);
                 player.sendMessage(chatColor + "魔力: " + magic);
-                player.sendMessage(chatColor + "最大マナ" + mana);
+                player.sendMessage(chatColor + "マナ" + mana + "/" + maxMana);
                 player.sendMessage(chatColor + "残りのステータスポイント: " + point);
                 player.sendMessage(chatColor + "ステータスパネル: " + panel);
             }

@@ -1,1 +1,4 @@
 # PhantasyStatus
+===
+# Licence
+No Licence
