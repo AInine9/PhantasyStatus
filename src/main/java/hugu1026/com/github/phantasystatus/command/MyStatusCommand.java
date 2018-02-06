@@ -43,11 +43,11 @@ public class MyStatusCommand implements CommandExecutor{
                 player.sendMessage(chatColor + "レベル: " + level);
                 player.sendMessage(chatColor + "累計経験値: " + totalExp);
                 player.sendMessage(chatColor + "次のレベルまで: " + reqExp);
-                player.sendMessage(chatColor + "体力: " + HP + "/" + maxHP);
+                player.sendMessage(chatColor + "体力: " + HP + " / " + maxHP);
                 player.sendMessage(chatColor + "攻撃力: " + attack);
                 player.sendMessage(chatColor + "防御力: " + defend);
                 player.sendMessage(chatColor + "魔力: " + magic);
-                player.sendMessage(chatColor + "マナ" + mana + "/" + maxMana);
+                player.sendMessage(chatColor + "マナ: " + mana + " / " + maxMana);
                 player.sendMessage(chatColor + "残りのステータスポイント: " + point);
                 player.sendMessage(chatColor + "ステータスパネル: " + panel);
             }
