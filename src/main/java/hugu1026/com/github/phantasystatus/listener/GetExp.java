@@ -29,7 +29,7 @@ public class GetExp implements Listener {
 
         playerData.set("status.totalExp", playerData.getLong("status.totalExp") + exp);
 
-        if(playerData.getInt("status.level") == MAX_LEVEL) {
+        if (playerData.getInt("status.level") == MAX_LEVEL) {
             PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
         } else {
@@ -38,7 +38,7 @@ public class GetExp implements Listener {
 
             long reqExp = playerData.getInt("status.reqExp");
 
-            if(reqExp <= 0) {
+            if (reqExp <= 0) {
                 Bukkit.getServer().getPluginManager().callEvent(levelUpEvent);
             }
         }

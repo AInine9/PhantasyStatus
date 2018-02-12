@@ -10,7 +10,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-public class InventoryClick implements Listener{
+public class InventoryClick implements Listener {
 
     private Player player;
 
@@ -23,37 +23,36 @@ public class InventoryClick implements Listener{
 
         if (!(event.getWhoClicked() instanceof Player)) return;
 
-        if(!(event.getWhoClicked() instanceof Player)) return;
+        if (!(event.getWhoClicked() instanceof Player)) return;
         this.player = (Player) event.getWhoClicked();
         int panel = PlayerDataUtil.getPlayerData(player).getInt("panel");
 
         Status status = new Status(player, panel);
 
-        if(!(status.canAddPoint())) return;
+        if (!(status.canAddPoint())) return;
 
         StatusGui gui = (StatusGui) event.getInventory().getHolder();
         ItemStack clickedItem = event.getCurrentItem();
 
         if (clickedItem != null) {
-            if(clickedItem.equals(gui.getHEALTH())) {
+            if (clickedItem.equals(gui.getHEALTH())) {
                 status.onPushStatusIcon(player, "Health");
                 return;
             }
-            if(clickedItem.equals(gui.getATTACK())) {
+            if (clickedItem.equals(gui.getATTACK())) {
                 status.onPushStatusIcon(player, "Attack");
                 return;
             }
-            if(clickedItem.equals(gui.getDEFEND())) {
+            if (clickedItem.equals(gui.getDEFEND())) {
                 status.onPushStatusIcon(player, "Defend");
                 return;
             }
-            if(clickedItem.equals(gui.getMAGIC())) {
+            if (clickedItem.equals(gui.getMAGIC())) {
                 status.onPushStatusIcon(player, "Magic");
             }
-            if(clickedItem.equals(gui.getGLASS())) {
+            if (clickedItem.equals(gui.getGLASS())) {
                 event.setCancelled(true);
-            }
-            else {
+            } else {
                 return;
             }
             event.setCancelled(true);

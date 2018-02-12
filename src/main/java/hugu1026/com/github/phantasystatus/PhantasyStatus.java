@@ -22,7 +22,7 @@ public final class PhantasyStatus extends JavaPlugin {
         super.onDisable();
     }
 
-    public void registerEvents(){
+    public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
 
         pm.registerEvents(new PlayerJoin(), this);

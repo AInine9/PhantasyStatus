@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 
 import java.io.File;
 
-public class LevelUp implements Listener{
+public class LevelUp implements Listener {
 
     @EventHandler
     public void LevelUp(LevelUpEvent event) {
@@ -43,9 +43,9 @@ public class LevelUp implements Listener{
                 break;
         }
 
-        if(!(playerLevel - 1 == event.getMaxLevel() - 1)) {
+        if (!(playerLevel - 1 == event.getMaxLevel() - 1)) {
 
-            if(playerData.getInt("status.reqExp") == 0) {
+            if (playerData.getInt("status.reqExp") == 0) {
                 playerData.set("status.reqExp", expTable[playerLevel]);
                 PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
@@ -53,7 +53,7 @@ public class LevelUp implements Listener{
                 playerData.set("status.reqExp", expTable[playerLevel] + playerData.getInt("status.reqExp"));
                 PlayerDataUtil.savePlayerData(playerFile, playerData, player);
 
-                if(playerData.getInt("status.reqExp") <= 0) {
+                if (playerData.getInt("status.reqExp") <= 0) {
                     LevelUpEvent levelUpEvent = new LevelUpEvent(player);
                     Bukkit.getServer().getPluginManager().callEvent(levelUpEvent);
                 }

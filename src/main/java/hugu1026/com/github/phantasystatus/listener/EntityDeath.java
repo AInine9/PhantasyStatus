@@ -17,11 +17,11 @@ public class EntityDeath implements Listener {
         Entity victim = event.getEntity();
         Player killer = event.getEntity().getKiller();
 
-        if(victim instanceof Creature
+        if (victim instanceof Creature
                 && hasCustomName
                 && killer != null) {
 
-            int exp = 10;
+            int exp = 500;
 
             GetExpEvent getExpEvent = new GetExpEvent(killer, exp);
             Bukkit.getServer().getPluginManager().callEvent(getExpEvent);

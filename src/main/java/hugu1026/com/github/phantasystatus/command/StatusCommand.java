@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class StatusCommand implements CommandExecutor{
+public class StatusCommand implements CommandExecutor {
 
     private final PhantasyStatus plg;
 
@@ -17,9 +17,9 @@ public class StatusCommand implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if(cmd.getName().equalsIgnoreCase("st")) {
+        if (cmd.getName().equalsIgnoreCase("st")) {
 
-            if(sender instanceof Player) {
+            if (sender instanceof Player) {
                 Player player = (Player) sender;
                 StatusGui gui = new StatusGui(player);
                 gui.openInventory(player);

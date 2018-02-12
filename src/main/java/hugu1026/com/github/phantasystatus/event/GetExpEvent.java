@@ -6,7 +6,7 @@ import org.bukkit.event.HandlerList;
 
 public class GetExpEvent extends Event {
 
-    private static  final HandlerList handlers = new HandlerList();
+    private static final HandlerList handlers = new HandlerList();
     private Player player;
     private int exp;
 
@@ -15,12 +15,12 @@ public class GetExpEvent extends Event {
         this.exp = exp;
     }
 
-    @Override
-    public HandlerList getHandlers() {
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 
-    public static HandlerList getHandlerList() {
+    @Override
+    public HandlerList getHandlers() {
         return handlers;
     }
 

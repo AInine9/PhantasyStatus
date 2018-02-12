@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-public class MyStatusCommand implements CommandExecutor{
+public class MyStatusCommand implements CommandExecutor {
     private final PhantasyStatus plg;
 
     public MyStatusCommand(PhantasyStatus plg) {
@@ -21,8 +21,8 @@ public class MyStatusCommand implements CommandExecutor{
 
         ChatColor chatColor = ChatColor.GOLD;
 
-        if(cmd.getName().equalsIgnoreCase("myst")) {
-            if(sender instanceof Player) {
+        if (cmd.getName().equalsIgnoreCase("myst")) {
+            if (sender instanceof Player) {
                 Player player = (Player) sender;
                 FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
 

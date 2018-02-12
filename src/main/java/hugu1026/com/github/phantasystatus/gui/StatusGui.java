@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class StatusGui extends Gui{
+public class StatusGui extends Gui {
 
     private ItemStack HEALTH, ATTACK, DEFEND, MAGIC, ALL, GLASS;
 
@@ -48,7 +48,7 @@ public class StatusGui extends Gui{
         this.ATTACK = super.createItemStack(Material.IRON_SWORD, ChatColor.LIGHT_PURPLE + "攻撃力", attack_lore, 1);
         this.DEFEND = super.createItemStack(Material.IRON_CHESTPLATE, ChatColor.LIGHT_PURPLE + "防御力", defend_lore, 1);
         this.MAGIC = super.createItemStack(Material.ENCHANTED_BOOK, ChatColor.LIGHT_PURPLE + "魔力", magic_lore, 1);
-        this.ALL = super.createItemStack(Material.PAPER, ChatColor.LIGHT_PURPLE + "残りのポイント" , all_lore, 1);
+        this.ALL = super.createItemStack(Material.PAPER, ChatColor.LIGHT_PURPLE + "残りのポイント", all_lore, 1);
         this.GLASS = super.createItemStack(Material.STAINED_GLASS_PANE, " ", null, 1);
         super.createInventory(this, 9, "ステータス振り分け");
     }
@@ -58,9 +58,9 @@ public class StatusGui extends Gui{
         super.setInventory(this.HEALTH, 0);
         super.setInventory(this.GLASS, 1);
         super.setInventory(this.ATTACK, 2);
-        super.setInventory(this.GLASS,3);
+        super.setInventory(this.GLASS, 3);
         super.setInventory(this.DEFEND, 4);
-        super.setInventory(this.GLASS,5);
+        super.setInventory(this.GLASS, 5);
         super.setInventory(this.MAGIC, 6);
         super.setInventory(this.GLASS, 7);
         super.setInventory(this.ALL, 8);

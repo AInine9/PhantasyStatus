@@ -10,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class Gui implements InventoryHolder{
+public class Gui implements InventoryHolder {
 
     private Inventory inventory;
 
@@ -20,7 +20,7 @@ public class Gui implements InventoryHolder{
     }
 
     public void setInventory(ItemStack itemStack, int slot) {
-        if(itemStack != null) {
+        if (itemStack != null) {
             this.inventory.setItem(slot, itemStack);
         }
     }
@@ -38,7 +38,7 @@ public class Gui implements InventoryHolder{
         ItemMeta meta = itemStack.getItemMeta();
 
         meta.setDisplayName(name);
-        if(lore != null) {
+        if (lore != null) {
             meta.setLore(lore);
         }
         itemStack.setItemMeta(meta);
