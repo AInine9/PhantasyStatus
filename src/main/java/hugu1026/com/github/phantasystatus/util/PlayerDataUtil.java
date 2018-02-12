@@ -81,6 +81,12 @@ public class PlayerDataUtil {
         return playerData.getInt("status.HP");
     }
 
+    public static int getPlayerMAX_HP(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("status.addition.hp") + 20;
+    }
+
     public static int getPlayerLEVEL(Player player) {
         FileConfiguration playerData = getPlayerData(player);
 
