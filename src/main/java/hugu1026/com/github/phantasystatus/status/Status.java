@@ -3,11 +3,8 @@ package hugu1026.com.github.phantasystatus.status;
 import hugu1026.com.github.phantasystatus.gui.StatusGui;
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.io.File;
 
@@ -91,20 +88,6 @@ public class Status{
                 playerData.set("status.addition.mana", playerData.getInt("status.addition.mana") + this.addValue_Mana);
                 playerData.set("status.mana", playerData.getInt("status.mana") + this.addValue_Mana);
                 player.sendMessage(ChatColor.GOLD + "ステータスポイントを魔力に振り分けた");
-
-                if(playerData.getInt("status.magic") % 2 == 0) {
-                    Material material = Material.PRISMARINE_SHARD;
-                    int amount = 1;
-                    String name = ChatColor.YELLOW + "スピリット";
-
-                    ItemStack spirit = new ItemStack(material, amount);
-                    ItemMeta itemMeta = spirit.getItemMeta();
-                    itemMeta.setDisplayName(name);
-                    spirit.setItemMeta(itemMeta);
-
-                    player.getInventory().addItem(spirit);
-                    player.sendMessage(ChatColor.GOLD + "スピリットを入手した");
-                }
         }
 
         PlayerDataUtil.savePlayerData(playerFile, playerData, player);

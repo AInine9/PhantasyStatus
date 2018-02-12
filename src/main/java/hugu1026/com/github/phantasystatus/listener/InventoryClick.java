@@ -1,7 +1,7 @@
 package hugu1026.com.github.phantasystatus.listener;
 
 import hugu1026.com.github.phantasystatus.gui.StatusGui;
-import hugu1026.com.github.phantasystatus.status.*;
+import hugu1026.com.github.phantasystatus.status.Status;
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
