@@ -6,3 +6,5 @@ commands:
     description: "Open Status Setting Gui."
   myst:
     description: "Show your status."
+  setmagiclimit:
+    descriptinon: "Set player's magic limit."

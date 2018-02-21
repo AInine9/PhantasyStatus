@@ -22,6 +22,7 @@ public class PlayerDataUtil {
                 playerData.createSection("panel");
                 playerData.createSection("status");
                 playerData.createSection("point");
+                playerData.createSection("magicAmountLimit");
 
                 playerData.set("name", player.getName());
                 playerData.set("panel", 1);
@@ -43,6 +44,7 @@ public class PlayerDataUtil {
                 playerData.set("point.attack", 0);
                 playerData.set("point.defend", 0);
                 playerData.set("point.magic", 0);
+                playerData.set("magicAmountLimit", 3);
 
                 playerData.save(file);
             } catch (IOException expection) {
@@ -121,5 +123,19 @@ public class PlayerDataUtil {
         FileConfiguration playerData = getPlayerData(player);
 
         return playerData.getInt("status.addition.mana") + 50;
+    }
+
+    public static int getMagicAmountLimit(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getInt("magicAmountLimit");
+    }
+
+    public static void setMagicAmountLimit(Player player, int amount) {
+        File playerFile = PlayerDataUtil.getPlayerFile(player);
+        FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
+
+        playerData.set("magicAmountLimit", amount);
+        savePlayerData(playerFile, playerData, player);
     }
 }
