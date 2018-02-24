@@ -1,6 +1,7 @@
 package hugu1026.com.github.phantasystatus.listener;
 
 import hugu1026.com.github.phantasystatus.event.GetExpEvent;
+import hugu1026.com.github.phantasystatus.manager.ExpDropManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
@@ -21,7 +22,10 @@ public class EntityDeath implements Listener {
                 && hasCustomName
                 && killer != null) {
 
-            int exp = 500;
+            String display[] = victim.getCustomName().split(" ");
+            String name = display[1];
+
+            int exp = ExpDropManager.SearchMobExpAmount(name);
 
             GetExpEvent getExpEvent = new GetExpEvent(killer, exp);
             Bukkit.getServer().getPluginManager().callEvent(getExpEvent);
