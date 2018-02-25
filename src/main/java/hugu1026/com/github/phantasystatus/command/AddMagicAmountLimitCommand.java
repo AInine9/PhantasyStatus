@@ -26,6 +26,7 @@ public class AddMagicAmountLimitCommand implements CommandExecutor {
                 int amount = Integer.parseInt(args[1]);
                 PlayerDataUtil.setMagicAmountLimit(player, amount);
             }
-        } return false;
+        }
+        return false;
     }
 }

@@ -7,8 +7,19 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerDataUtil {
+    private static List<String> magicList = new ArrayList<>();
+
+    static {
+        magicList.add("fire");
+        magicList.add("freeze");
+        magicList.add("explosion");
+        magicList.add("acid rain");
+        magicList.add("icelc drop");
+    }
 
     public static void createPlayerDataYml(Player player) {
         String playerUUID = String.valueOf(player.getUniqueId());
@@ -23,6 +34,7 @@ public class PlayerDataUtil {
                 playerData.createSection("status");
                 playerData.createSection("point");
                 playerData.createSection("magicAmountLimit");
+                playerData.createSection("magicList");
 
                 playerData.set("name", player.getName());
                 playerData.set("panel", 1);
@@ -45,6 +57,7 @@ public class PlayerDataUtil {
                 playerData.set("point.defend", 0);
                 playerData.set("point.magic", 0);
                 playerData.set("magicAmountLimit", 3);
+                playerData.set("magicList", magicList);
 
                 playerData.save(file);
             } catch (IOException expection) {
@@ -137,5 +150,11 @@ public class PlayerDataUtil {
 
         playerData.set("magicAmountLimit", amount);
         savePlayerData(playerFile, playerData, player);
+    }
+
+    public static List<String> getMagicList(Player player) {
+        FileConfiguration playerData = getPlayerData(player);
+
+        return playerData.getStringList("magicList");
     }
 }
