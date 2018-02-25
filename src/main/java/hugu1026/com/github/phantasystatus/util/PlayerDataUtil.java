@@ -157,4 +157,14 @@ public class PlayerDataUtil {
 
         return playerData.getStringList("magicList");
     }
+
+    public static void addMagicList(Player player, String magicName) {
+        File playerFile = PlayerDataUtil.getPlayerFile(player);
+        FileConfiguration playerData = getPlayerData(player);
+
+        List<String> magicList = getMagicList(player);
+        magicList.add(magicName);
+        playerData.set("magicList", magicList);
+        savePlayerData(playerFile, playerData, player);
+    }
 }
