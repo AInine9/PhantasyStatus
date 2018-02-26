@@ -4,6 +4,8 @@ import hugu1026.com.github.phantasystatus.event.LevelUpEvent;
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,6 +29,10 @@ public class LevelUp implements Listener {
         playerData.set("status.level", playerLevel);
         playerData.set("point.all", playerData.getInt("point.all") + 5);
         player.sendMessage(ChatColor.BLUE + "レベルが " + playerLevel + " になった！ステータスポイントを入手した！");
+        player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 1, (float) 1.5);
+        player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, (float) 0.9);
+        player.getWorld().spawnParticle(Particle.SPELL_WITCH, player.getLocation().add(0, 1, 0), 100);
+        player.getWorld().spawnParticle(Particle.CRIT_MAGIC, player.getLocation().add(0, 1, 0), 100);
 
         switch (playerLevel) {
             case 30:

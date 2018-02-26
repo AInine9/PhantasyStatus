@@ -5,6 +5,8 @@ import hugu1026.com.github.phantasystatus.event.LevelUpEvent;
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -26,6 +28,7 @@ public class GetExp implements Listener {
         FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
 
         player.sendMessage(ChatColor.GOLD + "+" + exp + "経験値");
+        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
         playerData.set("status.totalExp", playerData.getLong("status.totalExp") + exp);
 
