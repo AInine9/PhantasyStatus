@@ -167,4 +167,18 @@ public class PlayerDataUtil {
         playerData.set("magicList", magicList);
         savePlayerData(playerFile, playerData, player);
     }
+
+    public static void addPlayerHP(Player player, int addValue) {
+        File playerFile = PlayerDataUtil.getPlayerFile(player);
+        FileConfiguration playerData = getPlayerData(player);
+        int hp = getPlayerHP(player);
+        int maxHp = getPlayerMAX_HP(player);
+
+        if (hp + addValue > maxHp) {
+            playerData.set("status.HP", maxHp);
+        } else {
+            playerData.set("status,HP", hp + addValue);
+        }
+        savePlayerData(playerFile, playerData, player);
+    }
 }

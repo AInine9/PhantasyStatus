@@ -5,7 +5,6 @@ import hugu1026.com.github.phantasystatus.event.LevelUpEvent;
 import hugu1026.com.github.phantasystatus.util.PlayerDataUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
