@@ -180,5 +180,41 @@ public class PlayerDataUtil {
             playerData.set("status,HP", hp + addValue);
         }
         savePlayerData(playerFile, playerData, player);
+
+        int playerHP = hp + addValue;
+        double proportion = playerHP / maxHp;
+
+        if (1 >= proportion && proportion > 0.9) {
+            player.damage(0);
+        } else if (proportion > 0.8) {
+            player.setHealth(18);
+            player.damage(0);
+        } else if (proportion > 0.7) {
+            player.setHealth(16);
+            player.damage(0);
+        } else if (proportion > 0.6) {
+            player.setHealth(14);
+            player.damage(0);
+        } else if (proportion > 0.5) {
+            player.setHealth(12);
+            player.damage(0);
+        } else if (proportion > 0.4) {
+            player.setHealth(10);
+            player.damage(0);
+        } else if (proportion > 0.3) {
+            player.setHealth(8);
+            player.damage(0);
+        } else if (proportion > 0.2) {
+            player.setHealth(6);
+            player.damage(0);
+        } else if (proportion > 0.1) {
+            player.setHealth(4);
+            player.damage(0);
+        } else if (proportion > 0) {
+            player.setHealth(2);
+            player.damage(0);
+        } else if (proportion <= 0) {
+            player.damage(20);
+        }
     }
 }
