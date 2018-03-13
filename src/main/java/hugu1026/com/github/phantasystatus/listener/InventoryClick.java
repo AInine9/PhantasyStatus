@@ -29,33 +29,51 @@ public class InventoryClick implements Listener {
 
         Status status = new Status(player, panel);
 
-        if (!(status.canAddPoint())) return;
-
         StatusGui gui = (StatusGui) event.getInventory().getHolder();
         ItemStack clickedItem = event.getCurrentItem();
 
         if (clickedItem != null) {
             if (clickedItem.equals(gui.getHEALTH())) {
+                if (!(status.canAddPoint())) {
+                    event.setCancelled(true);
+                    return;
+                }
+                event.setCancelled(true);
                 status.onPushStatusIcon(player, "Health");
                 return;
             }
             if (clickedItem.equals(gui.getATTACK())) {
+                if (!(status.canAddPoint())) {
+                    event.setCancelled(true);
+                    return;
+                }
+                event.setCancelled(true);
                 status.onPushStatusIcon(player, "Attack");
                 return;
             }
             if (clickedItem.equals(gui.getDEFEND())) {
+                if (!(status.canAddPoint())) {
+                    event.setCancelled(true);
+                    return;
+                }
+                event.setCancelled(true);
                 status.onPushStatusIcon(player, "Defend");
                 return;
             }
             if (clickedItem.equals(gui.getMAGIC())) {
+                if (!(status.canAddPoint())) {
+                    event.setCancelled(true);
+                    return;
+                }
+                event.setCancelled(true);
                 status.onPushStatusIcon(player, "Magic");
             }
             if (clickedItem.equals(gui.getGLASS())) {
                 event.setCancelled(true);
-            } else {
-                return;
             }
-            event.setCancelled(true);
+            if (clickedItem.equals(gui.getALL())) {
+                event.setCancelled(true);
+            }
         }
     }
 }
