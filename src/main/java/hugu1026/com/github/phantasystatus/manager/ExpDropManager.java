@@ -12,6 +12,6 @@ public class ExpDropManager {
     }
 
     public static int SearchMobExpAmount(String name) {
-        return MobExpDropList.get(name);
+        return MobExpDropList.getOrDefault(name, 0);
     }
 }
