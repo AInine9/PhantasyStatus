@@ -4,14 +4,14 @@ import java.util.HashMap;
 
 public class ExpDropManager {
 
-    private static final HashMap<String, Integer> MobExpDropList = new HashMap<>();
+    private static final HashMap<String, Long> MobExpDropList = new HashMap<>();
 
-    static {
-        MobExpDropList.put("ゾンビ", 1);
-        MobExpDropList.put("テスト", 2);
+    static { //TODO remove test mob
+        MobExpDropList.put("ゾンビ", 1L);
+        MobExpDropList.put("テスト", 2L);
     }
 
-    public static int SearchMobExpAmount(String name) {
-        return MobExpDropList.getOrDefault(name, 0);
+    public static long SearchMobExpAmount(String name) {
+        return MobExpDropList.getOrDefault(name, 0L);
     }
 }

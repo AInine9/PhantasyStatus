@@ -27,8 +27,8 @@ public class MyStatusCommand implements CommandExecutor {
                 FileConfiguration playerData = PlayerDataUtil.getPlayerData(player);
 
                 int level = playerData.getInt("status.level");
-                int totalExp = playerData.getInt("status.totalExp");
-                int reqExp = playerData.getInt("status.reqExp");
+                long totalExp = playerData.getLong("status.totalExp");
+                long reqExp = playerData.getLong("status.reqExp");
                 int HP = playerData.getInt("status.HP");
                 int maxHP = playerData.getInt("status.addition.HP") + 20;
                 int attack = playerData.getInt("status.attack");

@@ -40,7 +40,7 @@ public class PlayerDataUtil {
                 playerData.set("panel", 1);
                 playerData.set("status.level", 1);
                 playerData.set("status.totalExp", 0);
-                playerData.set("status.reqExp", 4);
+                playerData.set("status.reqExp", 10);
                 playerData.set("status.HP", 20);
                 playerData.set("status.attack", 10);
                 playerData.set("status.defend", 10);

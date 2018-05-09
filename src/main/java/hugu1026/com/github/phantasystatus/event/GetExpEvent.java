@@ -8,9 +8,9 @@ public class GetExpEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
     private Player player;
-    private int exp;
+    private long exp;
 
-    public GetExpEvent(Player player, int exp) {
+    public GetExpEvent(Player player, long exp) {
         this.player = player;
         this.exp = exp;
     }
@@ -28,7 +28,7 @@ public class GetExpEvent extends Event {
         return player;
     }
 
-    public int getExp() {
+    public long getExp() {
         return exp;
     }
 }

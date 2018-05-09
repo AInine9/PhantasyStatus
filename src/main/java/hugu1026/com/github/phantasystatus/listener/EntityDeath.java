@@ -25,7 +25,7 @@ public class EntityDeath implements Listener {
             String display[] = victim.getCustomName().split(" ");
             String name = display[1];
 
-            int exp = ExpDropManager.SearchMobExpAmount(name);
+            long exp = ExpDropManager.SearchMobExpAmount(name);
 
             GetExpEvent getExpEvent = new GetExpEvent(killer, exp);
             Bukkit.getServer().getPluginManager().callEvent(getExpEvent);
