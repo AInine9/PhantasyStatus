@@ -1,6 +1,7 @@
 package hugu1026.com.github.phantasystatus;
 
 import hugu1026.com.github.phantasystatus.command.AddMagicAmountLimitCommand;
+import hugu1026.com.github.phantasystatus.command.GiveExpCommand;
 import hugu1026.com.github.phantasystatus.command.MyStatusCommand;
 import hugu1026.com.github.phantasystatus.command.StatusCommand;
 import hugu1026.com.github.phantasystatus.listener.*;
@@ -17,6 +18,7 @@ public final class PhantasyStatus extends JavaPlugin {
         getCommand("st").setExecutor(new StatusCommand(this));
         getCommand("myst").setExecutor(new MyStatusCommand(this));
         getCommand("setmagiclimit").setExecutor(new AddMagicAmountLimitCommand(this));
+        getCommand("giveexp").setExecutor(new GiveExpCommand(this));
     }
 
     @Override

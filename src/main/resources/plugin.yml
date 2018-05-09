@@ -7,4 +7,6 @@ commands:
   myst:
     description: "Show your status."
   setmagiclimit:
-    descriptinon: "Set player's magic limit."
+    description: "Set player's magic limit."
+  giveexp:
+    description: "Give player specific exp"
